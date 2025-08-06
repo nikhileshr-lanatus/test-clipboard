@@ -11,7 +11,11 @@ export function useWebSocket({ onMessage, onConnectionChange }) {
     }
 
     const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
-    const wsUrl = `${protocol}//${window.location.host}`;
+    // Add your prefix here - examples:
+    // const wsUrl = `${protocol}//${window.location.host}/ws`;
+    // const wsUrl = `${protocol}//${window.location.host}/socket`;
+    // const wsUrl = `${protocol}//${window.location.host}/api/ws`;
+    const wsUrl = `${protocol}//${window.location.host}/clipboard`;
 
     try {
       socketRef.current = new WebSocket(wsUrl);
